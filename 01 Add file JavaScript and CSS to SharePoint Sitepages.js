@@ -21,6 +21,19 @@ function get_File_CSS(url){
     headTag.appendChild(link);
 }
 
+function get_File_JavaScript_module(url){
+    let scriptTag = document.createElement("script");
+    scriptTag.src = url;
+    scriptTag.type = 'module';
+    
+    scriptTag.onload = function () {
+        console.log('onLoad url [module]: ' + url);
+    };
+    
+    let headTag = document.getElementsByTagName("head")[0] || document.documentElement;
+    headTag.appendChild(scriptTag);
+}
+
 /*
 // Bootrap 4.6.2
 // JQuery 3.5.1
@@ -37,4 +50,9 @@ get_File_CSS(css1);
 
 // clear "Content"
 $('article').html('');
+
+var js3 = 'https://unpkg.com/@fluentui/web-components@2.5.15/dist/web-components.min.js';
+
+get_File_JavaScript_module(js3);
+
 */
