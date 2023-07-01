@@ -1,3 +1,5 @@
+var SDR_JS_Version = '2023-07-01 0833';
+
 function get_File_JavaScript(url){
     let scriptTag = document.createElement("script");
     scriptTag.src = url;
